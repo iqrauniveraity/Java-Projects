@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;RamaqomaGuiJComponent&apos;" deleteContents="false" description="Delete resource &apos;RamaqomaGuiJComponent&apos;" element1="/RamaqomaGuiJComponent" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1490977623355"/>
+</session>

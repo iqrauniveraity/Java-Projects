@@ -1,0 +1,83 @@
+package maths;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.*;
+import javax.swing.border.TitledBorder;
+public class Maths extends JFrame
+{
+	JPanel panel;
+	JLabel lbl_number1;
+	JTextField txt_number1;
+
+	JLabel lbl_number2;
+	JTextField txt_number2;
+	
+	JButton btn_add;
+	JLabel lbl_result;
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Maths screen = new Maths();
+		screen.setTitle("Math - Application");
+		screen.setBounds(100,100,500,300);
+		screen.setVisible(true);
+		
+		screen.setDefaultCloseOperation(EXIT_ON_CLOSE);
+	}
+	Maths()
+	{
+		panel = new JPanel();
+		panel.setLayout(null);
+		panel.setBorder(new TitledBorder("Add Numbers"));
+		setContentPane(panel);
+		
+		lbl_number1 = new JLabel("Enter Number 1: ");
+		lbl_number1.setBounds(50,50,150,30);
+		panel.add(lbl_number1);
+		
+		txt_number1 = new JTextField();
+		txt_number1.setBounds(170,50,150,30);
+		panel.add(txt_number1);
+		
+		lbl_number2 = new JLabel("Enter Number 2: ");
+		lbl_number2.setBounds(50,90,150,30);
+		panel.add(lbl_number2);
+		
+		txt_number2 = new JTextField();
+		txt_number2.setBounds(170,90,150,30);
+		panel.add(txt_number2);
+		
+		btn_add = new JButton("Add");
+		btn_add.setBounds(170,130,90,30);
+		panel.add(btn_add);
+		
+		lbl_result = new JLabel("..");
+		lbl_result.setBounds(170,170,90,30);
+		panel.add(lbl_result);
+		
+		btn_add.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				
+				if( !txt_number1.getText().trim().equals("") &&
+					!txt_number2.getText().trim().equals("") )
+				{
+					int sum = Integer.parseInt(txt_number1.getText().trim()) + 
+							  Integer.parseInt(txt_number2.getText().trim());
+				
+				lbl_result.setText(String.valueOf(sum));
+				}				
+				else
+				{		JOptionPane.showMessageDialog(null, "Fields cannot be empty!");
+									
+				}
+				
+			}
+		});
+		
+	}
+
+}

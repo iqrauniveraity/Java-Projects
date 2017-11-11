@@ -1,0 +1,78 @@
+
+public class Car2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		  Cars car1 = new Cars();
+	        car1.carcompany = "Audi";
+	        car1.carname = "r8";
+	        car1.model = "4.2fsi";
+	        car1.bodytype = "convertible";
+	        car1.modelyear = 2016;
+	        car1.bhp = 420;
+	        car1.transmissiontype = "automatic";
+	        car1.noOfTransmission = 6;
+	        car1.drivetype = "4wd";
+	        car1.rimtype = "alloy";
+	        car1.rimsize = 18.00;
+	        car1.fueltankcapacity = 90;
+	        car1.topspeed = 301.00;
+	        car1.color1 = "black";
+	        car1.color2 = " silver";
+	        car1.price = 165000;
+	       
+	         Cars car2 = new Cars("mclaren", 1230000, "sedan", "670S", "sport", "alloy", 560, "automatic" , 6 , 95, 20.00, "black", "red", 2017, "4wheeldrive" , 350);
+	        car2.carcompany = "mclaren";
+	        car2.carname = "670s";
+	        car2.model = "sport";
+	        car2.bodytype = "sedan";
+	        car2.modelyear = 2016;
+	        car2.bhp = 420;
+	        car2.transmissiontype = "automatic";
+	        car2.noOfTransmission = 6;
+	        car2.drivetype = "4wd";
+	        car2.rimtype = "alloy";
+	        car2.rimsize = 20.00;
+	        car2.fueltankcapacity = 95;
+	        car2.topspeed = 305.00;
+	        car2.color1 = "black";
+	        car2.color2 = " red";
+	        car2.price = 123000;
+	        
+	        System.out.println("Car1");
+	        System.out.println(car1.carcompany);
+	        System.out.print(car1.carname);
+	        System.out.print(car1.model);
+	        System.out.print(car1.bodytype);
+	        System.out.print(car1.modelyear);
+	        System.out.print(car1.bhp);
+	        System.out.print(car1.transmissiontype);
+	        System.out.print(car1.noOfTransmission);
+	        System.out.print(car1.drivetype);
+	        System.out.print(car1.rimtype);
+	        System.out.print(car1.rimsize);
+	        System.out.print(car1.fueltankcapacity);
+	        System.out.print(car1.topspeed);
+	        System.out.print(car1.color1);
+	        System.out.print(car1.color2);
+	        System.out.print(car1.price);
+	        System.out.println("Car2");
+	        System.out.println(car2.carcompany);
+	        System.out.print(car2.carname);
+	        System.out.print(car2.model);
+	        System.out.print(car2.bodytype);
+	        System.out.print(car2.modelyear);
+	        System.out.print(car2.bhp);
+	        System.out.print(car2.transmissiontype);
+	        System.out.print(car2.noOfTransmission);
+	        System.out.print(car2.drivetype);
+	        System.out.print(car2.rimtype);
+	        System.out.print(car2.rimsize);
+	        System.out.print(car2.fueltankcapacity);
+	        System.out.print(car2.topspeed);
+	        System.out.print(car2.color1);
+	        System.out.print(car2.color2);
+	        System.out.print(car2.price);
+	}
+
+}

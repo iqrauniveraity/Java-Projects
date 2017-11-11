@@ -1,0 +1,73 @@
+package loancalculator;
+
+import javax.swing.JFrame;
+import javax.swing.JComboBox;
+import javax.swing.JButton;
+import javax.swing.JTextField;
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JList;
+import javax.swing.JPanel;
+import javax.swing.border.TitledBorder;
+import javax.swing.*;
+import javax.swing.ListSelectionModel;
+import javax.swing.*;
+
+public class LoanCalculator extends JFrame {
+
+	JFrame frame;
+	JButton btn1,btn2,btn3,btn4;
+	JTextField txt1,txt2,txt3,txt4,txt5;
+	FlowLayout flayout;
+	JComboBox cbox1,cbox2;
+	String[] arr = {"compute","Exit"};
+	JLabel label1,label2,label3,label4,label5;
+	JPanel panel;
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		LoanCalculator LCalculator = new LoanCalculator();
+	}
+
+	LoanCalculator(){
+		frame = new JFrame();
+		frame.setTitle("Loan Calculator");
+		frame.setSize(300, 300);
+		
+		flayout = new FlowLayout();
+		 frame.setLayout(flayout);
+		 
+		 
+		 
+		 panel = new JPanel();
+		 panel.setBorder(new TitledBorder("Loan Information"));
+		 setContentPane(panel);
+		 frame.add(panel);
+		 
+		 label1 = new JLabel("Enter Loan Amount : ");
+		 panel.add(label1);
+		 label1.setBounds(50,50,150,3);
+		 txt1 = new JTextField(10);
+		 panel.add(txt1);
+		 label2 = new JLabel("Enter Interest Amount : ");
+		 panel.add(label2);
+		 label2.setBounds(50,100,150,3);
+		 txt2 = new JTextField(10);
+		 panel.add(txt2);
+		 label3 = new JLabel("Enter Loan Amount : ");
+		 panel.add(label3);
+		 label3.setBounds(50,150,150,3);
+		 txt3 = new JTextField(10);
+		 panel.add(txt3);
+		 label4 = new JLabel("Enter Loan Amount : ");
+		 panel.add(label4);
+		 label4.setBounds(50,200,150,3);
+		 txt4 = new JTextField(10);
+		 panel.add(txt4);
+		 
+		frame.setVisible(true);
+		 frame.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE);
+		 frame.setLocationRelativeTo(null);
+	}
+}

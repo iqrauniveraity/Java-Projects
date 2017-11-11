@@ -1,0 +1,87 @@
+package loanManagement;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.border.TitledBorder;
+import javax.swing.*;
+public class LoanManagement extends JFrame {
+
+	JFrame frame;
+	JPanel panel1;
+	JButton guest,admin, help;
+	
+	LoanManagement(){
+		frame= new JFrame("Loan Management");
+		frame.setBounds(250, 180, 250, 150);
+		panel1 = new JPanel();
+		frame.add(panel1);
+		panel1.setBorder(new TitledBorder("select any one"));
+		admin = new JButton("Admin Panel");
+		panel1.add(admin);
+		guest = new JButton("guest");
+		panel1.add(guest);
+		panel1.add(admin, BorderLayout.EAST);
+		panel1.add(guest, BorderLayout.WEST);
+		help = new JButton("help");
+		panel1.add(help);
+		panel1.add(help, BorderLayout.SOUTH);
+		admin.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent arg0){
+				JFrame frame1 = new JFrame("Admin Panel");
+				frame1.setBounds(280, 280, 250, 150);
+			    JPanel panel2 = new JPanel();
+			    panel2.setLayout(null);
+			    panel2.setBorder(new TitledBorder("Authentication Required"));
+			    JLabel username = new JLabel("Username");
+		        panel2.add(username);
+		        JTextField txt1 = new JTextField(15);
+		        panel2.add(txt1);
+
+		        JLabel passward = new JLabel("Passward");
+		        panel2.add(passward);
+		        JTextField txt2 = new JTextField(15);
+		        panel2.add(txt2);
+
+		        add(panel2, BorderLayout.CENTER);
+		        JButton login = new JButton("Login");
+		        
+		        login.addActionListener(new ActionListener(){
+		        	@Override
+		        	public void actionPerformed(ActionEvent arg0){
+		        		if(!txt1.getText().trim().equals("") && !txt2.getText().trim().equals("")){
+		        			String username1  = "admin";
+		        			String passward1  = "iqra";
+		        			String t = txt1.getText().trim().toLowerCase();
+		        			String s = txt2.getText().trim().toLowerCase();
+		        			if(t.equals("admin")==true && s.equals("iqra")==true){
+		        				JOptionPane.showMessageDialog(null, "Welcome Admin");
+		        			}
+		        			else
+		        			{
+		        				JOptionPane.showMessageDialog(null, "invalid user name or passward");
+		        			}
+		        		}
+		        		else
+		        		{
+		        			JOptionPane.showMessageDialog(null, "text field empyt");
+		        		}
+		        	}
+		        });
+		      
+
+			    
+			    
+				frame1.setDefaultCloseOperation(EXIT_ON_CLOSE);
+				frame1.setVisible(true);
+				frame1.setLocationRelativeTo(null);
+			}
+		});
+		frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		frame.setVisible(true);
+		frame.setLocationRelativeTo(null);
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+LoanManagement LM = new LoanManagement();
+	}
+
+}

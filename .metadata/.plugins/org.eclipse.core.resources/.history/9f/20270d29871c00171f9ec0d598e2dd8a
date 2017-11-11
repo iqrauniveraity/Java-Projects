@@ -1,0 +1,27 @@
+package loancalculator;
+
+import javafx.application.*;
+import javafx.event.*;
+import javafx.geometry.*;
+import javafx.geometry.*;
+import javafx.scene.*;
+import javafx.scene.control.*;
+import javafx.scene.control.*;
+import javafx.scene.control.*;
+import javafx.scene.layout.*;
+import javafx.stage.*;
+
+public class LoanCalculator {
+
+	private TextField tfNumberOfYears = new TextField();
+	private TextField tfLoanAmount = new TextField();
+	private TextField tfMonthlyPayment = new TextField();
+	private TextField tfTotalPayment = new TextField();
+	private Button btCalculate = new Button("Calculate");
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

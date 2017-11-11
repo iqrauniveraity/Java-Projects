@@ -1,0 +1,37 @@
+package loanManagement;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.border.TitledBorder;
+import javax.swing.*;
+public class LoanManagement extends JFrame {
+
+	JFrame frame;
+	JPanel panel1;
+	JButton guest,admin, help;
+	
+	LoanManagement(){
+		frame= new JFrame("Loan Management");
+		frame.setBounds(250, 180, 250, 150);
+		panel1 = new JPanel();
+		frame.add(panel1);
+		panel1.setBorder(new TitledBorder("select any one"));
+		admin = new JButton("Admin Panel");
+		panel1.add(admin);
+		guest = new JButton("guest");
+		panel1.add(guest);
+		panel1.add(admin, BorderLayout.EAST);
+		panel1.add(guest, BorderLayout.WEST);
+		help = new JButton("help");
+		panel1.add(help);
+		panel1.add(help, BorderLayout.SOUTH);
+		
+		frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		frame.setVisible(true);
+		frame.setLocationRelativeTo(null);
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+LoanManagement LM = new LoanManagement();
+	}
+
+}

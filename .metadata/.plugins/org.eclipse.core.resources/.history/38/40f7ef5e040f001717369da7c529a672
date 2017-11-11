@@ -1,0 +1,23 @@
+
+public class abc {
+
+	public abc(String carcompany, int price, String bodytype, String carname, String model, String rimtype, double bhp, String transmissiontype, int noOfTransmission, int fueltankcapacity, double rimsize, String color1, String color2, int modelyear, String drivetype, double topspeed) {
+		this.carcompany  = carcompany;
+		  this.price = price;
+		  this.bodytype = bodytype ;
+		  this.carname = carname;
+		  this.model = model;
+		  this.rimtype = rimtype;
+		  this.bhp = bhp;
+		  this.transmissiontype = transmissiontype;
+		  this.noOfTransmission = noOfTransmission ;
+		  this.fueltankcapacity = fueltankcapacity ;
+		  this.rimsize = rimsize ;
+		  this.color1 = color1 ;
+		  this.color2 = color2;
+		  this.modelyear = modelyear ;
+		  this.drivetype = drivetype ;
+		  this.topspeed = topspeed;
+	}
+
+}

@@ -1,0 +1,31 @@
+package frametest;
+import javax.swing.*;
+import java.awt.*;
+public class Frametest extends JFrame{
+ 
+	JFrame fun;
+	JButton btn1;
+	JButton btn2;
+	JPanel p;
+    JLabel lb;
+    JTextField  txt;
+    
+    Frametest(){
+    	fun = new JFrame();
+    	fun.setTitle("haji");
+    	fun.setVisible(true);
+    	fun.setDefaultCloseOperation(EXIT_ON_CLOSE);
+    	fun.setLocationRelativeTo(null);
+    	fun.setSize(500,200);
+    	
+    	
+    	
+    }
+	
+	
+	public static void main(String[] args) {
+	Frametest you = new Frametest();
+
+	}
+
+}

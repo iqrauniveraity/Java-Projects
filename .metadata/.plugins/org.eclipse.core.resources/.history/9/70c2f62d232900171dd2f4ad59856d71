@@ -1,0 +1,426 @@
+package loanManagement;
+import java.awt.*;
+import java.awt.event.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+
+import javax.swing.border.TitledBorder;
+import javax.swing.*;
+public class LoanManagement extends JFrame {
+
+	JFrame frame;
+	JPanel panel1;
+	JButton guest,admin, help;
+	
+	LoanManagement(){
+		frame= new JFrame("Loan Management");
+		frame.setBounds(250, 180, 250, 150);
+		panel1 = new JPanel();
+		frame.add(panel1);
+		panel1.setBorder(new TitledBorder("select any one"));
+		admin = new JButton("Admin Panel");
+		panel1.add(admin);
+		guest = new JButton("guest");
+		panel1.add(guest);
+		panel1.add(admin, BorderLayout.EAST);
+		panel1.add(guest, BorderLayout.WEST);
+		help = new JButton("help");
+		panel1.add(help);
+		panel1.add(help, BorderLayout.SOUTH);
+		admin.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent arg0){
+				JFrame frame1 = new JFrame("Admin Panel");
+				frame1.setBounds(280, 280, 290, 200);
+				
+			    JPanel panel2 = new JPanel();
+			    panel2.setBorder(new TitledBorder("Authentication Required"));
+			    frame1.add(panel2);
+			    JLabel username = new JLabel("Username");
+		        panel2.add(username);
+		        JTextField txt1 = new JTextField(15);
+		        panel2.add(txt1);
+
+		        JLabel passward = new JLabel("Passward");
+		        panel2.add(passward);
+		        JTextField txt2 = new JTextField(15);
+		        panel2.add(txt2);
+
+		       
+		        JButton login = new JButton("Login");
+		      panel2.add(login);
+		        login.addActionListener(new ActionListener(){
+		        	@Override
+		        	public void actionPerformed(ActionEvent arg0){
+		        		if(!txt1.getText().trim().equals("") && !txt2.getText().trim().equals("")){
+		        			String username1  = "admin";
+		        			String passward1  = "iqra";
+		        			String t = txt1.getText().trim().toLowerCase();
+		        			String s = txt2.getText().trim().toLowerCase();
+		        			if(t.equals("admin")==true && s.equals("iqra")==true){
+		        				JOptionPane.showMessageDialog(null, "welcome admin");
+		        				JFrame admin = new JFrame("Admin Forum");
+		        				admin.setSize(250, 150);
+		        				JPanel forum = new JPanel();
+		        				forum.setBorder(new TitledBorder("Menu"));
+		        				admin.add(forum);
+		        				JButton form = new JButton("Loan Form");
+		        				forum.add(form, BorderLayout.NORTH);
+		        				JButton loanCalculator = new JButton("Loan Calculator");
+	  						    forum.add(loanCalculator, BorderLayout.CENTER);
+		        				JButton contact = new JButton("contact and about");
+  						      forum.add(contact,BorderLayout.SOUTH);
+  						      
+  			        		
+  			        		 contact.addActionListener(new ActionListener(){
+  						        	@Override
+  						        	public void actionPerformed(ActionEvent arg0){
+           	File file = new File("C:/Users/newlife network/workspace/loanManagement/Contact.txt");
+  						        		FileInputStream fis = null;
+
+  						        		try {
+  						        			fis = new FileInputStream(file);
+
+  						        			System.out.println("Total file size to read (in bytes) : "
+  						        					+ fis.available());
+
+  						        			int content;
+  						        			while ((content = fis.read()) != -1) {
+  						        				// convert to char and display it
+  						        				System.out.print((char) content);
+  						        			}
+
+  						        		} catch (IOException e) {
+  						        			e.printStackTrace();
+  						        		} finally {
+  						        			try {
+  						        				if (fis != null)
+  						        					fis.close();
+  						        			} catch (IOException ex) {
+  						        				ex.printStackTrace();
+  						        			}
+  						        		}
+  						        	}
+  						        });
+  			        		 loanCalculator.addActionListener(new ActionListener(){
+  			        			 public void actionPerformed(ActionEvent arg0){
+  			        				JFrame loanC = new JFrame();
+  			        				JButton btn1 = new JButton("compute");
+  			        				JTextField tinterestrate = new JTextField(15);
+  			        				JTextField tamount = new JTextField(15);
+  			        				JTextField tyears = new JTextField(15);
+  			        				JTextField ttotalloan = new JTextField(15);
+  			        				JTextField tmonthlypayment = new JTextField(15);
+  			        				JLabel amount = new JLabel("Amount");
+  			        				JLabel interestrate = new JLabel("Interest Rate");
+  			        				JLabel years = new JLabel("Years     ");
+  			        				JLabel totalloan = new JLabel("Total Loan");
+  			        				JLabel monthlypayment = new JLabel("Monthly Loan");
+  			        				JPanel panel0 = new JPanel();
+  			        				panel0.setBorder(new TitledBorder("Loan Calculator"));
+  			        				loanC.setSize(350, 350);
+  			        				loanC.add(panel0);
+  			        				
+  			        				amount.setBounds(50,50,150,30);
+  			        				 panel0.add(amount);
+  			        				 
+  			        				 	tamount.setBounds(170,50,150,30);
+  			        					panel0.add(tamount);
+  			        					
+  			        				interestrate.setBounds(50, 90, 150, 30);
+  			        				panel0.add(interestrate);
+  			        				
+  			        				tinterestrate.setBounds(170, 90, 150, 30);
+  			        				panel0.add(tinterestrate);
+  			        				 
+  			        				years.setBounds(50, 130, 150, 30);
+  			        				panel0.add(years);
+  			        				
+  			        				tyears.setBounds(170, 130, 150, 30);
+  			        				panel0.add(tyears);
+  			        				
+  			        				totalloan.setBounds(100, 500, 80, 30);
+  			        				panel0.add(totalloan);
+  			        				ttotalloan.setBounds(170, 130, 150, 30);
+  			        				panel0.add(ttotalloan);
+
+  			        				monthlypayment.setBounds(100, 800, 80, 30);
+  			        				panel0.add(monthlypayment);
+  			        				tmonthlypayment.setBounds(170, 130, 150, 30);
+  			        				panel0.add(tmonthlypayment);
+  			        				
+  			        				
+  			        				
+  			        				btn1.setBounds(150, 350, 80, 30);
+  			        				panel0.add(btn1, BorderLayout.SOUTH);
+  			        				btn1.addActionListener(new ActionListener() {
+  			        					
+  			        					@Override
+  			        					public void actionPerformed(ActionEvent arg0) {
+  			        						
+  			        						if( !tamount.getText().trim().equals("") &&
+  			        							!tinterestrate.getText().trim().equals("") &&
+  			        							!tyears.getText().trim().equals("") )
+  			        						{
+  			        							double loanamount = Integer.parseInt(tamount.getText().trim()); 
+  			        							double interestrate = Integer.parseInt(tinterestrate.getText().trim());
+  			        							double numberofyears = Integer.parseInt(tyears.getText().trim());
+  			        							double interestRate = interestrate / 100;
+  			        							double interestamount = interestRate * loanamount;
+  			        							double totalLoan = loanamount + interestamount;
+  			        							
+  			        							double monthlyPayment = totalLoan/(numberofyears * 12);
+  			        						
+  			        							ttotalloan.setText(String.valueOf(totalLoan));
+  			        							tmonthlypayment.setText(String.valueOf(monthlyPayment));
+  			        						}				
+  			        						else
+  			        						{		JOptionPane.showMessageDialog(null, "Fields cannot be empty!");
+  			        											
+  			        						}
+  			        						
+  			        					}
+  			        				});
+
+
+  			        				
+  			        				loanC.setVisible(true);
+  			        				loanC.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE);
+  			        				 loanC.setLocationRelativeTo(null);
+  			        				;
+  			        			 }
+  			        		 });
+
+		        				 form.addActionListener(new ActionListener(){
+		        			        	@Override
+		        			        	public void actionPerformed(ActionEvent arg0){
+		        			        		JFrame loanform = new JFrame("ABC Bank");
+		        			        		loanform.setSize(350, 400);
+		        			        		JPanel page = new JPanel();
+		        			        		page.setBorder(new TitledBorder("Loan Form"));
+		        			        		loanform.add(page);
+		        			        		JLabel name = new JLabel("Name");
+		        			        		JLabel cnic = new JLabel("CNIC");
+		        			        		JLabel number = new JLabel("Number");
+		        			        		JLabel age = new JLabel("    Age    ");
+		        			        		JLabel amount = new JLabel("Loan Amount");
+		        			        		JLabel purpose = new JLabel("Purpose");
+		        			        		JLabel job = new JLabel("   Job    ");
+		        			        		JLabel organization = new JLabel("Organization");
+		        			        		JLabel years = new JLabel("    years    ");
+		        			        		JTextField tname = new JTextField(20);
+		        			        		JTextField tcnic = new JTextField(20);
+		        			        		JTextField tnumber = new JTextField(20);
+		        			        		JTextField tage = new JTextField(20);
+		        			        		JTextField tamount = new JTextField(10);
+		        			        		JTextField tpurpose = new JTextField(20);
+		        			        		JTextField tjob  = new JTextField(20);
+		        			        		JTextField torganization = new JTextField(20);
+		        			        		JTextField tyears  = new JTextField(20);
+		        			        		page.add(name);
+		        			        		page.add(tname);
+		        			        		page.add(cnic);
+		        			        		page.add(tcnic);
+		        			        		page.add(age);
+		        			        		page.add(tage);
+		        			        		page.add(number);
+		        			        		page.add(tnumber);
+		        			        		page.add(job);
+		        			        		page.add(tjob);
+		        			        		page.add(organization);
+		        			        		page.add(torganization);
+		        			        		page.add(purpose);
+		        			        		page.add(tpurpose);
+		        			        		page.add(amount);
+		        			        		page.add(tamount);
+		        			        		page.add(years);
+		        			        		page.add(tyears);
+		        			        		JButton submit = new JButton("Submit");
+		        			        		page.add(submit, BorderLayout.SOUTH);
+		        			        		
+		        			        		submit.addActionListener(new ActionListener() {
+		        			    				
+		        			    				@Override
+		        			    				public void actionPerformed(ActionEvent arg0) {
+		        			    					int age = Integer.parseInt(tage.getText());
+		        			    					int number = Integer.parseInt(tnumber.getText());
+		        			    					int amount = Integer.parseInt(tamount.getText());
+		        			    					if( !tname.getText().trim().equals("") &&
+		        			    						!tage.getText().trim().equals("") &&
+		        			    						!tcnic.getText().trim().equals("")&&
+		        			    						!tnumber.getText().trim().equals("") &&
+		        			    						!tjob.getText().trim().equals("") &&
+		        			    						!torganization.getText().trim().equals("") &&
+		        			    						!tpurpose.getText().trim().equals("") &&
+		        			    						!tamount.getText().trim().equals("") &&
+		        			    						!tyears.getText().trim().equals(""))
+		        			    					{
+		        			    						JOptionPane.showMessageDialog(null, "We will contact you in 2-3 working days");
+		        			    					}
+		        			    					else{
+		        			    						JOptionPane.showMessageDialog(null, "Fields cannot be empty!");
+		        			    					}
+		        			    				}});
+		        			    	        
+		        						     
+		        			        		loanform.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		        			        		loanform.setVisible(true);
+		        			        		loanform.setLocationRelativeTo(null);
+		        			        	}});
+		        				admin.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		        				admin.setVisible(true);
+		        				admin.setLocationRelativeTo(null);
+		        			}
+		        			else
+		        			{
+		        				JOptionPane.showMessageDialog(null, "invalid user name or passward");
+		        			}
+		        		}
+		        		else
+		        		{
+		        			JOptionPane.showMessageDialog(null, "text field empyt");
+		        		}
+		        	}
+		        });
+		        JButton forget = new JButton("Forgetten Passward");
+			      panel2.add(forget);
+			      forget.addActionListener(new ActionListener(){
+			        	@Override
+			        	public void actionPerformed(ActionEvent arg0){
+			        		File file = new File("C:/Users/newlife network/workspace/loanManagement/Passward.txt");
+			        		FileInputStream fis = null;
+
+			        		try {
+			        			fis = new FileInputStream(file);
+
+			        			System.out.println("Total file size to read (in bytes) : "
+			        					+ fis.available());
+
+			        			int content;
+			        			while ((content = fis.read()) != -1) {
+			        				// convert to char and display it
+			        				System.out.print((char) content);
+			        			}
+
+			        		} catch (IOException e) {
+			        			e.printStackTrace();
+			        		} finally {
+			        			try {
+			        				if (fis != null)
+			        					fis.close();
+			        			} catch (IOException ex) {
+			        				ex.printStackTrace();
+			        			}
+			        		}
+			        	}
+			        });
+				frame1.setDefaultCloseOperation(EXIT_ON_CLOSE);
+				frame1.setVisible(true);
+				frame1.setLocationRelativeTo(null);
+			}
+		});
+
+	       guest.addActionListener(new ActionListener(){
+	    	   public void actionPerformed(ActionEvent arg0){
+	    		   JFrame frame2 = new JFrame("Loan Calculator");
+	    		   frame2.setSize(320,350);
+	    		   JPanel panel3 = new JPanel();
+	    			 panel3.setBorder(new TitledBorder("Loan Calculator"));
+	    			 frame2.add(panel3);
+		    			JLabel LoanAmount = new JLabel();
+		    			LoanAmount.setText("Enter Loan Amount:");
+		    			LoanAmount.setBounds(50,50,150,30);
+		    			 panel3.add(LoanAmount);
+		    			 
+		    			 JTextField txta = new JTextField(14);
+		    				txta.setBounds(170,50,150,30);
+		    				panel3.add(txta);
+		    				
+		    				JLabel interestrate = new JLabel();
+		    			interestrate.setText("  Interest Rate   :");
+		    			interestrate.setBounds(50, 90, 150, 30);
+		    			panel3.add(interestrate);
+		    			
+		    			JTextField txtb = new JTextField(14);
+		    			txtb.setBounds(170, 90, 150, 30);
+		    			panel3.add(txtb);
+		    			 
+		    			JLabel years = new JLabel();
+		    			years.setText("Number Of Years:");
+		    			years.setBounds(50, 130, 150, 30);
+		    			panel3.add(years);
+		    			
+		    			JTextField txtc = new JTextField(14);
+		    			txtc.setBounds(170, 130, 150, 30);
+		    			panel3.add(txtc);
+		    			
+		    			JLabel totalloan = new JLabel();
+		    			totalloan.setText("     Total loan     :");
+		    			totalloan.setBounds(100, 500, 80, 30);
+		    			panel3.add(totalloan);
+		    			JTextField txtd = new JTextField(14);
+		    			txtd.setBounds(170, 130, 150, 30);
+		    			panel3.add(txtd);
+
+		    			JLabel monthlypayment = new JLabel();
+		    			monthlypayment.setText("Monthly payment    :");
+		    			monthlypayment.setBounds(100, 800, 80, 30);
+		    			panel3.add(monthlypayment);
+		    			JTextField txte = new JTextField(14);
+		    			txte.setBounds(170, 130, 150, 30);
+		    			panel3.add(txte);
+		    			JButton compute= new JButton();
+		    			compute.setText("compute");
+		    			compute.setBounds(150, 350, 80, 30);
+		    			panel3.add(compute, BorderLayout.SOUTH);
+
+		    			compute.addActionListener(new ActionListener() {
+		    				
+		    				@Override
+		    				public void actionPerformed(ActionEvent arg0) {
+		    					
+		    					if( !txta.getText().trim().equals("") &&
+		    						!txtb.getText().trim().equals("") &&
+		    						!txtc.getText().trim().equals("") )
+		    					{
+		    						double loanamount = Integer.parseInt(txta.getText().trim()); 
+		    						double interestrate = Integer.parseInt(txtb.getText().trim());
+		    						double numberofyears = Integer.parseInt(txtc.getText().trim());
+		    						double interestRate = interestrate / 100;
+		    						double interestamount = interestRate * loanamount;
+		    						double totalLoan = loanamount + interestamount;
+		    						
+		    						double monthlyPayment = totalLoan/(numberofyears * 12);
+		    					
+		    						txtd.setText(String.valueOf(totalLoan));
+		    						txte.setText(String.valueOf(monthlyPayment));
+		    					}				
+		    					else
+		    					{		JOptionPane.showMessageDialog(null, "Fields cannot be empty!");
+		    										
+		    					}
+		    					
+		    				}
+		    			});
+
+	    		   
+	    		   frame2.setDefaultCloseOperation(EXIT_ON_CLOSE);
+					frame2.setVisible(true);
+					frame2.setLocationRelativeTo(null);
+	    	   }
+	       });
+    help.addActionListener(new ActionListener(){
+ 	   public void actionPerformed(ActionEvent arg0){
+ 		   JOptionPane.showMessageDialog(null, "select AnyOne ");
+ 	   }
+    });
+		frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		frame.setVisible(true);
+		frame.setLocationRelativeTo(null);
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+LoanManagement LM = new LoanManagement();
+	}
+
+}

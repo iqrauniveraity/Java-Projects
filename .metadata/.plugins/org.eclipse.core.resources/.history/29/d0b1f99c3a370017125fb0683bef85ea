@@ -1,0 +1,24 @@
+package passupdate;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.border.TitledBorder;
+import javax.swing.*;
+public class Passupdate extends JFrame {
+	JFrame frame1;
+	JButton btn;
+	JLabel label1,label2;
+	JPasswordField p1;
+     JPanel panel;
+	
+	Passupdate(){
+		frame1 = new JFrame("BMS");
+		frame1.setSize(350, 350);
+		frame1.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		frame1.setLocationRelativeTo(null);
+		frame1.setVisible(true);
+	}
+	
+public static void main(String[] args){
+	Passupdate pu = new Passupdate();
+}
+}

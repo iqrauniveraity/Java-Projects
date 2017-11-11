@@ -1,0 +1,10 @@
+Verify Income Sources
+
+Probably the most important step is to verify all the income, assets, and employment information of the borrower. You need to verify
+ the employment of the borrower (VOE). You need to verify the income of the borrower (VOI). You also need to verify the assets listed
+ by the borrower (VOA) and any other income information required or produced by the borrower. 
+
+Every lender differs in the way you go about verifying a loan applicant's income, so be sure to follow the procedures for your specific
+ lender. If your lender requires verification of employment in writing, you'll need to request that letter from the loan applicant's 
+employer. For some lenders, paystubs and W2 forms are sufficient. And yet for others, simple verbal verification of employment by phone
+ is fine. You need to record each verification that you have made into the loan processing software which you are using.

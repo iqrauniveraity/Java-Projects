@@ -1,0 +1,30 @@
+package lc;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.border.TitledBorder;
+import javax.swing.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+public class Lc extends JFrame{
+
+	JFrame frame;
+	JPanel panel1;
+	JButton guest;
+	Lc(){
+		frame = new JFrame("Filing");
+		frame.setSize(300, 300);
+		panel1 = new JPanel();
+		panel1.setBorder(new TitledBorder("abc"));
+        frame.add(panel1);
+        frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		frame.setVisible(true);
+		frame.setLocationRelativeTo(null);
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Lc c = new Lc();
+	}
+
+}

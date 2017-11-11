@@ -1,0 +1,16 @@
+ The Loan File
+
+The loan file is where it all begins. Depending on whether or not you are the loan processor of a larger company or both the loan officer
+and loan processor of a smaller office, the work of the loan processor starts here with this file (well folder). The loan file will 
+contain--you guessed it--the loan application. In addition, it will include comments made by anyone who has had their input in the 
+loan application process as well as any notes about the potential borrower that was made during the loan interview process. 
+Read through the application, comments, notes, and overall loan request. You should make sure that you understand the loan 
+in its entirety before moving forward. If you have any questions about the loan you need to clarify these issues with the
+ Loan Officer before moving forward. 
+
+After you have reviewed the information and have a clear picture of the loan and why the applicant is requesting it, you'll enter this
+information into your company's loan processing computer system. There are many programs out there that your employer will use; many 
+of them are a combination of home-grown software packages. However, the reason this information needs to be fully entered into the 
+computer system is because fulfilling all the requirements of a successful loan is tedious and deadline specific. The loan processing
+ software you use will keep you on track for the next steps that need to be completed as well as their related deadlines. Once this 
+information has been fully entered into the computer system, you can now proceed to the next step.

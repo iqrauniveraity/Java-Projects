@@ -1,0 +1,17 @@
+package picdemo;
+
+public class sbc {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+int x=0, y=4;
+double z=3.0;
+x = x+ 2;
+z = z +x +y -7;
+y=x*2;
+System.out.println(x);
+System.out.println(y);
+System.out.println(z);
+	}
+
+}

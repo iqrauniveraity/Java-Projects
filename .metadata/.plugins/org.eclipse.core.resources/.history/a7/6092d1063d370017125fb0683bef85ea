@@ -1,0 +1,47 @@
+package passupdate;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.border.TitledBorder;
+import javax.swing.*;
+public class Passupdate extends JFrame {
+	JFrame frame1;
+	JButton btn;
+	JLabel label1,np,cnp;
+	JPasswordField p1,p2,p3;
+     JPanel panel;
+	
+	Passupdate(){
+		frame1 = new JFrame("BMS");
+		frame1.setSize(350, 350);
+		frame1.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		frame1.setLocationRelativeTo(null);
+		frame1.setVisible(true);
+		panel = new JPanel();
+		panel.setBorder(new TitledBorder("update Password"));
+		SpringLayout a = new SpringLayout();
+		panel.setLayout(a);
+		frame1.add(panel);
+		label1 = new JLabel("old password");
+		label1.setBounds(90,110,50,60);
+		panel.add(label1);
+		p1 = new JPasswordField(14);
+		p1.setBounds(140,110,50,60);
+		panel.add(p1);
+		np = new JLabel("new Password");
+		label1.setBounds(90,150,50,60);
+		panel.add(np);
+		p2 = new JPasswordField(14);
+		p2.setBounds(140,150,50,60);
+		panel.add(p2);
+		cnp = new JLabel("confirm new password");
+		cnp.setBounds(90,210,50,60);
+		panel.add(cnp);
+		p3 = new JPasswordField(14);
+		p3.setBounds(140,210,50,60);
+		panel.add(p3);
+	}
+	
+public static void main(String[] args){
+	Passupdate pu = new Passupdate();
+}
+}

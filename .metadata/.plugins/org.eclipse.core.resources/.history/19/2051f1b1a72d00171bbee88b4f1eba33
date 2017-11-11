@@ -1,0 +1,101 @@
+package loancalculator;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.FlowLayout;
+import java.awt.Font;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.border.TitledBorder;
+
+import javax.swing.BorderFactory;
+import javax.swing.*;
+
+public class LoanCalculator extends JFrame {
+
+	JFrame main;
+	JPanel menu;
+	JButton loanForm, loanCalculator, query, aboutUs, quit;
+	JLabel mainmenu;
+	LoanCalculator(){
+	    main = new JFrame("Loan Calculator");
+	    main.setSize(400, 400);
+	    menu = new JPanel();
+	    menu.setBorder(new TitledBorder(""));
+	    menu.setBorder(BorderFactory.createMatteBorder(4, 4, 4, 4, Color.BLACK));
+	    menu.setBackground(Color.DARK_GRAY);
+	    main.add(menu);
+	    mainmenu = new JLabel("Main Menu");
+	    mainmenu.setBackground(Color.white);
+	    mainmenu.setForeground(Color.blue);
+	    
+	    mainmenu.setFont(new Font(mainmenu.getFont().getName(),mainmenu.getFont().getStyle(), 25 ));
+	    menu.add(mainmenu);
+	    mainmenu.setBounds(135, 80, 800, 60);
+	    loanCalculator = new JButton("Loan Calculator");
+	    
+	    menu.add(loanCalculator);
+	    loanCalculator.setBounds(95, 110, 200, 35);
+	    loanForm = new JButton("Loan Form");
+	    menu.add(loanForm);
+	    loanForm.setBounds(95, 150, 200, 35);
+	    query = new JButton("Query");
+	    menu.add(query);
+	    query.setBounds(95, 190, 200, 35);
+	    aboutUs = new JButton("About us");
+	    menu.add(aboutUs);
+	    aboutUs.setBounds(95, 230, 200, 35);
+	    quit = new JButton("Quit");
+	    menu.add(quit);
+	    quit.setBounds(95, 270, 200, 35);
+	    
+	 /*   loanCalculator.addActionListener(new ActionListener(){
+            @Override
+               public void actionPerformed(ActionEvent e){
+                 LoanComputer obj = new loanComputer();
+                obj.LoanComputer.show();
+                Main.hide();
+           }});
+	    loanForm.addActionListener(new ActionListener(){
+            @Override
+               public void actionPerformed(ActionEvent e){
+                LoanForm obj = new LoanForm();
+                obj.LoanForm.show();
+                Main.hide();
+           }});
+	    query.addActionListener(new ActionListener(){
+            @Override
+               public void actionPerformed(ActionEvent e){
+                
+                LoanComputer.show();
+                Main.hide();
+           }});
+	    aboutUs.addActionListener(new ActionListener(){
+            @Override
+               public void actionPerformed(ActionEvent e){
+                
+                LoanComputer.show();
+                Main.hide();
+           }});
+	    quit.addActionListener(new ActionListener(){
+            @Override
+               public void actionPerformed(ActionEvent e){
+                
+                LoanComputer.show();
+                Main.hide();
+           }});*/
+	    main.setVisible(true);
+	    main.setDefaultCloseOperation(EXIT_ON_CLOSE);
+	    main.setLocationRelativeTo(null);
+	    
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		LoanCalculator LCalculator = new LoanCalculator();
+	}
+
+	}
+

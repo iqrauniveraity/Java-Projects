@@ -1,0 +1,110 @@
+package loancalculator;
+
+import javax.swing.JFrame;
+import javax.swing.JComboBox;
+import javax.swing.JButton;
+import javax.swing.JTextField;
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JList;
+import javax.swing.JPanel;
+import javax.swing.border.TitledBorder;
+import javax.swing.*;
+import javax.swing.ListSelectionModel;
+import javax.swing.*;
+
+public class LoanCalculator extends JFrame {
+
+	JFrame frame;
+	JButton btn1,btn2,btn3,btn4;
+	JTextField txt1,txt2,txt3,txt4,txt5,txt6;
+	FlowLayout flayout;
+	JComboBox cbox1,cbox2;
+	String[] arr = {"compute","Exit"};
+	JLabel label1,label2,label3,label4,label5;
+	JPanel panel,panel2;
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		LoanCalculator LCalculator = new LoanCalculator();
+	}
+
+	LoanCalculator(){
+		frame = new JFrame();
+		frame.setTitle("Loan Calculator");
+		frame.setSize(280, 300);
+		
+		 
+		 panel = new JPanel();
+		 panel.setBorder(new TitledBorder("Loan Information"));
+		 setContentPane(panel);
+		 
+		 frame.add(panel);
+		 
+		 
+		 label1 = new JLabel();
+		 label1.setText("Enter Loan Amount");
+		 label1.setBounds(50,50,150,30);
+		 panel.add(label1);
+		 
+		 txt1 = new JTextField(14);
+			txt1.setBounds(170,50,150,30);
+			panel.add(txt1);
+			
+		label2 = new JLabel();
+		label2.setText("Interest Rate");
+		label2.setBounds(50, 90, 150, 30);
+		panel.add(label2);
+		
+		txt2 = new JTextField(14);
+		txt2.setBounds(170, 90, 150, 30);
+		panel.add(txt2);
+		 
+		label2 = new JLabel();
+		label2.setText("Interest Rate");
+		label2.setBounds(50, 130, 150, 30);
+		panel.add(label2);
+		
+		txt2 = new JTextField(14);
+		txt2.setBounds(170, 130, 150, 30);
+		panel.add(txt2);
+		
+		label3 = new JLabel();
+		label3.setText("No Of Years");
+		label3.setBounds(50, 180, 150, 30);
+		panel.add(label3);
+		
+		txt3 = new JTextField(14);
+		txt3.setBounds(170, 180, 150, 30);
+		panel.add(txt3);
+		
+		label4 = new JLabel();
+		label4.setText("Total Loan");
+		label4.setBounds(50, 250, 150, 30);
+		panel.add(label4);
+		
+		txt4 = new JTextField(14);
+		txt4.setBounds(170, 250, 150, 30);
+		panel.add(txt4);
+		
+		label5 = new JLabel();
+		label5.setText("Interest Rate");
+		label5.setBounds(50, 300, 150, 30);
+		panel.add(label5);
+		
+		txt5 = new JTextField(14);
+		txt5.setBounds(170, 300, 150, 30);
+		panel.add(txt5);
+		
+		btn1= new JButton();
+		btn1.setText("compute");
+		btn1.setBounds(50, 350, 80, 30);
+		panel.add(btn1);
+		
+		
+		frame.setVisible(true);
+		 frame.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE);
+		 frame.setLocationRelativeTo(null);
+	}
+}

@@ -1,0 +1,68 @@
+package loancalculator;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.FlowLayout;
+import java.awt.Font;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.border.TitledBorder;
+
+import entertainmentemulator.EntertainmentEmulator;
+
+import javax.swing.*;
+
+public class LoanCalculator extends JFrame {
+
+	JFrame main;
+	JButton loanForm, loanCalculator, query, aboutUs, quit;
+	JLabel mainmenu;
+	LoanCalculator(){
+		main = new JFrame();
+	    loanCalculator = new JButton("Loan Calculator");
+	    loanForm = new JButton("Loan Form");
+	    query = new JButton("Query");
+	    aboutUs = new JButton("About Us");
+	    quit = new JButton("Quit");
+	    mainmenu = new JLabel("G.K QUIZ");
+	    
+	    main.setSize(400, 400);
+	    main.add(mainmenu);
+	     mainmenu.setBounds(200, 6, 800, 60);
+	            mainmenu.setForeground(Color.blue);
+	            mainmenu.setFont(new Font(mainmenu.getFont().getName(),mainmenu.getFont().getStyle(), 25 )); 
+	    
+	   
+	    
+	    
+	    /*GKQuiz.add(back);
+	    
+	    GKQuiz.add(enter);
+	     enter.setBounds(120, 65, 800, 60);
+	        //    enter.setForeground(Color.black);
+	         //   enter.setFont(new Font(enter.getFont().getName(),enter.getFont().getStyle(), 15 )); 
+	    GKQuiz.add(back);
+	    
+	    back.setBounds(0,341,400,20);
+	              back.addActionListener(new ActionListener(){
+	                 
+	                    public void actionPerformed(ActionEvent e){
+	                     EntertainmentEmulator b = new EntertainmentEmulator();
+	                     GKQuiz.hide();
+	                     b.MainMenu.show();
+	                }});*/
+	    main.setVisible(true);
+	    main.setDefaultCloseOperation(EXIT_ON_CLOSE);
+	    main.setLocationRelativeTo(null);
+	    
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		LoanCalculator LCalculator = new LoanCalculator();
+	}
+
+	}
+

@@ -1,0 +1,53 @@
+package loancalculator2;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.FlowLayout;
+import java.awt.Font;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.border.TitledBorder;
+import javax.swing.*;
+
+public class loancalculator2 extends JFrame{
+JFrame lCMenu;
+JPanel lCMPanel;
+JLabel heading, amount, years;
+JTextField tamount, tyears;
+loancalculator2(){
+	lCMenu = new JFrame("Loan Calculator");
+	lCMPanel = new JPanel();
+	heading = new JLabel("Loan Calculator");
+	amount = new JLabel("Enter Amount");
+	tamount = new JTextField(14);	
+	years = new JLabel("Enter years");
+	tyears = new JTextField(14);
+	lCMenu.setSize(400, 400);
+	lCMenu.add(lCMPanel);
+	lCMPanel.setBorder(new TitledBorder(""));
+    lCMPanel.setBorder(BorderFactory.createMatteBorder(4, 4, 4, 4, Color.BLACK));
+    setLayout(new BorderLayout());
+    setContentPane(new JLabel(new ImageIcon("C:/Users/newlife network/workspace/loancalculator2/untitled.png")));
+    setLayout(new FlowLayout());
+    lCMPanel.add(heading);
+	heading.setBounds(135, 80, 800, 60);
+	heading.setBackground(Color.white);
+	heading.setForeground(Color.blue);
+	heading.setFont(new Font(heading.getFont().getName(),heading.getFont().getStyle(), 25 ));
+
+	
+
+
+  lCMenu.setVisible(true);
+  lCMenu.setDefaultCloseOperation(EXIT_ON_CLOSE);
+  lCMenu.setLocationRelativeTo(null);
+}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		loancalculator2 obj = new loancalculator2();
+	}
+
+}

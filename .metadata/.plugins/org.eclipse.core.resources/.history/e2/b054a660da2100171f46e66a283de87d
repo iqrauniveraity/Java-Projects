@@ -1,0 +1,114 @@
+package loancalculator;
+
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JMenu;
+import javax.swing.border.TitledBorder;
+import javax.swing.*;
+import javax.swing.*;
+
+public class LoanCalculator extends JFrame {
+
+	JFrame frame;
+	JMenu menu;
+	JButton btn1,btn2,btn3,btn4;
+	JTextField txt1,txt2,txt3,txt4,txt5,txt6;
+	FlowLayout flayout;
+	JComboBox cbox1,cbox2;
+	String[] arr = {"compute","Exit"};
+	JLabel label1,label2,label3,label4,label5;
+	JPanel panel,panel2;
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		LoanCalculator LCalculator = new LoanCalculator();
+	}
+
+	LoanCalculator(){
+		frame = new JFrame();
+		frame.setTitle("Loan Calculator");
+		frame.setSize(350, 400);
+		
+		
+		 
+		 panel = new JPanel();
+		 panel.setBorder(new TitledBorder("Loan Information"));
+		 setContentPane(panel);
+		 
+		 frame.add(panel);
+		 
+		 
+		 label1 = new JLabel();
+		 label1.setText("Enter Loan Amount:");
+		 label1.setBounds(50,50,150,30);
+		 panel.add(label1);
+		 
+		 txt1 = new JTextField(14);
+			txt1.setBounds(170,50,150,30);
+			panel.add(txt1);
+			
+		label2 = new JLabel();
+		label2.setText("  Interest Rate   :");
+		label2.setBounds(50, 90, 150, 30);
+		panel.add(label2);
+		
+		txt2 = new JTextField(14);
+		txt2.setBounds(170, 90, 150, 30);
+		panel.add(txt2);
+		 
+		label2 = new JLabel();
+		label2.setText("Number Of Years:");
+		label2.setBounds(50, 130, 150, 30);
+		panel.add(label2);
+		
+		txt2 = new JTextField(14);
+		txt2.setBounds(170, 130, 150, 30);
+		panel.add(txt2);
+		
+		label3 = new JLabel();
+		label3.setText("Total loan");
+		label3.setBounds(100, 500, 80, 30);
+		panel.add(label3);
+		
+		label4 = new JLabel();
+		label4.setText("no of years");
+		label4.setBounds(100, 590, 80, 30);
+		panel.add(label4);
+		
+		btn1= new JButton();
+		btn1.setText("compute");
+		btn1.setBounds(50, 350, 80, 30);
+		panel.add(btn1);
+		
+btn1.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				
+				if( !txt1.getText().trim().equals("") &&
+					!txt2.getText().trim().equals("") &&
+					!txt3.getText().trim().equals("") )
+				{
+					double tInterest = Integer.parseInt(txt1.getText().trim()) * 
+							  Integer.parseInt(txt2.getText().trim());
+					double totalLoan =  Integer.parseInt(txt1.getText().trim()) + 
+							  tInterest;
+					double monthlyPayment = (totalLoan / Integer.parseInt(txt3.getText().trim())*12);
+				
+					label3.setText(String.valueOf(totalLoan));
+					label4.setText(String.valueOf(monthlyPayment));
+				}				
+				else
+				{		JOptionPane.showMessageDialog(null, "Fields cannot be empty!");
+									
+				}
+				
+			}
+		});
+		
+		frame.setVisible(true);
+		 frame.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE);
+		 frame.setLocationRelativeTo(null);
+	}
+}
